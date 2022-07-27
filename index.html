@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>F1963</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="wrap">
+   
+<!--헤더 시작-->
+    <header id="header">
+            <h1 class="logo"><a href="#">F1963</a></h1>
+            <div class="fadebox"></div>
+            <h1 class="left_logo">ART & CULTURE</h1>
+            <nav class="nav">
+                <a class="menu-trigger" href="#">
+                  <span>MENU</span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </a>
+            </nav>
+    </header>
+    <section id="menupage">
+       <div class="menu">
+               <div class="menubox">
+                <div>
+                <a href="#">mennu010101</a>
+                </div>
+                <div>
+                <a href="#">mennu02</a>
+                </div>
+                <div>
+                <a href="#">mennu0333</a>
+                </div>
+                <div>
+                <a href="#">mennu0448896</a>
+                </div>
+                <div>
+                <a href="#">mennu05</a>
+                </div>
+            </div>
+        </div>
+    </section>   
+ <!--헤더 끝-->
+   
+<!--메인 배너 시작-->                     
+    <section id="banner">
+        <div class="main">
+        <img src="images/mainimg.png" alt="">
+        </div>
+        <!--세로 텍스트-->
+        <div class="text_box1">
+            <div class="column_text">
+                <div>F1963</div>
+                <div>ART</div>
+                <div>CULTURE</div>
+            </div>
+        </div>
+        <!--가로 텍스트-->
+        <div class="text_box2">
+            <div class="row_text clearfix">
+                <div>F1963</div>
+                <div class="mini">Busan, Suyeong</div>
+                <div>ART</div>
+                <div>CULTURE</div>
+            </div>
+        </div>
+    </section>
+    
+<!--메인 배너 끝-->    
+
+    
+<!--화이트 배너 시작-->
+   <section id="white-banner" class="padding">
+        <div class="banner-txt title01">SPACE</div>
+        <div class="banner-txt title02">Design to live by</div>
+        <div class="banner-txt title03">Gum Nanse Music Center</div>
+        <div class="banner-txt title04">F1963 Library</div>
+        <div class="banner-txt title05">F1963 Squarererere</div>
+        <div class="banner-txt title06">Sukcheon Hall</div>
+        <div class="map"><img src="images/map03.png" alt=""></div>
+   </section>
+<!--화이트 배너 시작 끝-->    
+    
+    <!--<section id="white-banner">
+        <div class="banner-txt title01">ALMOST</div>
+        <div class="banner-txt title02">A LOVE</div>
+        <div class="banner-txt title03">STORY 20SS</div>
+</section>-->
+    
+    
+    <section id="content2"></section>
+    <section id="content3"></section>
+    <section id="newsletter"></section>
+ 
+    
+       
+          
+             
+                
+                   
+                      
+
+
+   
+    <footer id="footer"></footer>
+    
+    
+    
+    
+       
+</div>
+    
+
+          
+             
+                        
+
+    
+    
+    
+</body>
+</html>
+
+
+<script src="script/jquery.min.js"></script>
+<script>
+
+/*블랙 메뉴 창 페이드*/   
+$( document ).ready( function() {
+  $(".nav").click( function() {
+    $(".menu").fadeToggle();
+  })
+});
+
+/*중앙 로고 가림*/
+$( document ).ready( function() {
+  $(".nav").click( function() {
+    $(".fadebox").fadeToggle();
+  })
+});
+ 
+
+ /*햄버거 메뉴 버튼*/
+const menuTrigger = document.querySelector('.menu-trigger');
+
+menuTrigger.addEventListener('click', (event) => {
+  event.currentTarget.classList.toggle('active-1');
+});
+    
+
+/*화이트 배너*/
+    window.addEventListener('scroll', function(){
+            scrollMotion()
+        });
+
+        function scrollMotion(){
+            const ele = document.querySelectorAll('.title01'),
+            ele2 = document.querySelectorAll('.title02'),
+            ele3 = document.querySelectorAll('.title03'),
+            ele4 = document.querySelectorAll('.title04'),
+            ele5 = document.querySelectorAll('.title05'),
+            ele6 = document.querySelectorAll('.title06');
+                    
+            let eleOffsetArr = [];
+
+            ele.forEach(e => {
+                let eleOffset = e.getBoundingClientRect().top + window.pageYOffset - 300;
+                eleOffsetArr.push(eleOffset)
+            });
+            
+            eleOffsetArr.forEach((offset, idx) => {
+                if( window.scrollY > offset ){
+                    setTimeout(function () {
+                        ele[idx].style.cssText = 'opacity:1; transform: translate(330px,20px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele2[idx].style.cssText = 'opacity:1; transform: translateX(-370px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele3[idx].style.cssText = 'opacity:1; transform: translateX(-230px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele4[idx].style.cssText = 'opacity:1; transform: translateX(-405px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele5[idx].style.cssText = 'opacity:1; transform: translateX(-327px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele6[idx].style.cssText = 'opacity:1; transform: translateX(-398px)';
+                    }, 200);
+                }else{
+                    setTimeout(function () {
+                        ele[idx].style.cssText = 'opacity:100; transform: translateX(0px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele2[idx].style.cssText = 'opacity:100; transform: translateX(0)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele3[idx].style.cssText = 'opacity:100; transform: translateX(290px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele4[idx].style.cssText = 'opacity:100; transform: translateX(-470px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele5[idx].style.cssText = 'opacity:100; transform: translateX(-40px)';
+                    }, 200);
+                    setTimeout(function () {
+                        ele6[idx].style.cssText = 'opacity:100; transform: translateX(300px)';
+                    }, 200);
+                }
+            });
+        }
+  
+
+    
+/*블랙메뉴창 스크롤 방지*/
+/*
+$('html, body').css({'overflow': 'hidden', 'height': '100%'}); // 모달팝업 중 html,body의 scroll을 hidden시킴
+$('#menupage').on('scroll touchmove mousewheel', function(event) { // 터치무브와 마우스휠 스크롤 방지
+    event.preventDefault();
+    event.stopPropagation();
+
+    return false;
+});
+ 
+
+$('html, body').css({'overflow': 'auto', 'height': '100%'}); //scroll hidden 해제
+$('#menupage').off('scroll touchmove mousewheel'); // 터치무브 및 마우스휠 스크롤 가능
+*/
+
+    
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,453 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
+/*reset*/
+*{
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+li {
+    list-style: none;
+}
+body {
+    color: #333333;
+    font-family: 'Nanum Myeongjo', 'Nanum Gothic', '맑은 고딕', serif;
+}
+.clearfix::before, clearfix::after{
+    display: block; content: ''; clear: both;
+}
+
+
+/*기본 사이즈*/
+#wrap {
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#header {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    z-index: 700;
+    mix-blend-mode: difference;
+}
+
+#menupage {
+    position: fixed;
+    z-index: 600;
+}
+
+#banner {
+    position: relative;
+    width:100%;
+    overflow: hidden;
+}
+#content1 {
+    width: 100%;
+    height: 720px;
+    background: #aaa;
+}
+#content2 {
+    width: 100%;
+    height: 720px;
+    background: #bbb;
+}
+#content3 {
+    width: 100%;
+    height: 720px;
+    background: #ccc;
+}
+#newsletter {
+    width: 100%;
+    height: 720px;
+    background: #eee;
+}
+#footer {
+    width: 100%;
+    height: 500px;
+    background: #aaa;
+}
+
+
+/*헤더*/
+.logo {
+    text-align: center;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+.logo a {
+    font-size: 23px;
+    font-weight: 700;
+    color: #eee;
+}
+
+.fadebox {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 45%;
+    width: 100px;
+    height: 30px;
+    background: #000;
+}
+
+
+.left_logo {
+    position: absolute;
+    top: 19px;
+    left: 17px;
+    padding-left: 10px;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 500;
+    color: #eee;
+}
+
+/*햄버거 메뉴 버튼*/
+.nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.menu-trigger span:nth-child(1) {
+    position: absolute;
+    top: -1px;
+    left: -58px;
+    width: 0;
+    height: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.menu-trigger,
+.menu-trigger span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+}
+
+.menu-trigger {
+    position: relative;
+    width: 20px;
+    height: 15px;
+    color: #ccc;
+}
+
+.menu-trigger span {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.7px;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.menu-trigger span:nth-of-type(2) {
+    top: 0;
+}
+
+.menu-trigger span:nth-of-type(3) {
+    top: 6.7px;
+    height: 2px;
+}
+
+.menu-trigger span:nth-of-type(4) {
+    bottom: 0;
+}
+
+/* 2th bar 사라지고,  1st 3rd 중앙으로 */
+
+.menu-trigger.active-1 span:nth-of-type(1) {
+    color: #fff;
+}
+
+.menu-trigger.active-1 span:nth-of-type(2) {
+    transform: translateY(7px);
+    background-color: #fff;
+}
+
+.menu-trigger.active-1 span:nth-of-type(3) {
+    opacity: 0;
+}
+
+.menu-trigger.active-1 span:nth-of-type(4) {
+    transform: translateY(-7px);
+    background-color: #fff;
+}
+
+
+
+/*블랙 메뉴 창*/
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    overflow: hidden;
+}
+.menu .menubox {
+    margin-top: 130px;
+    text-align: center;
+}
+.menu .menubox a {
+    display: block;
+    padding-bottom: 20px;
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.menubox div:nth-child(1) {
+    animation: fadeIn 1s;
+}
+.menubox div:nth-child(2) {
+    animation: fadeIn 1.2s;
+}
+.menubox div:nth-child(3) {
+    animation: fadeIn 1.4s;
+}
+.menubox div:nth-child(4) {
+    animation: fadeIn 1.6s;
+}
+.menubox div:nth-child(5) {
+    animation: fadeIn 1.8s;
+}
+
+.menubox a:hover {
+    color:#fff000;
+}
+/*
+.menubox a:hover {
+    color: #004a33;
+}
+*/
+
+
+/*메인 배너*/
+.main {
+    line-height: 680px;
+    margin: 0 auto;
+    text-align: center;
+}
+.main img {
+    width: 330px;
+    height: 440px;
+    object-fit: cover;
+    vertical-align: middle;
+    transition: all ease 2s 0s;
+    animation-name: img_size;
+    animation-delay: 2.5s;
+    animation-duration:1.7s;
+    animation-duration: ease-in-out;
+    animation-iteration-count:1;
+    animation-direction:alternate;
+    animation-fill-mode:forwards;
+}
+
+
+/*세로 텍스트*/
+.text_box1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    font-size: 65px;
+    color: #fff;
+    font-weight: bold;
+    line-height: 170px;
+}
+
+.column_text div {
+    animation: fadeIn2 1s ease-in-out;
+}
+
+.column_text div:nth-child(1) {
+    
+}
+
+
+.column_text {
+    animation-name: fadeOut;
+    animation-delay: 1.6s;
+    animation-duration:1s;
+    animation-duration: ease-in;
+    animation-iteration-count:1;
+    animation-direction:alternate;
+    animation-fill-mode:forwards;
+}
+
+
+/*가로 텍스트*/
+.row_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-55%,-50%);
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.row_text div {
+    float: left;
+    width: 300px;
+    font-weight: 800;
+    font-style: italic;
+    font-size: 100px;
+    color: #fff;
+    animation: fadeIn2 0.8s ease;
+    animation-fill-mode:backwards;
+}
+
+.row_text .mini {
+    font-size: 18px;
+    padding-top: 50px;
+    display: block;
+}
+
+.row_text div:nth-child(1) {
+    animation-delay: 3.8s;
+}
+.row_text div:nth-child(2) {
+    animation-delay: 3.9s;
+}
+.row_text div:nth-child(3) {
+    animation-delay: 4s;
+}
+.row_text div:nth-child(4) {
+    animation-delay: 4.1s;
+}
+
+
+/*화이트 배너*/
+#white-banner {
+    position: relative;
+    width: 100%;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin : 0 auto;
+}
+
+.padding {
+    position: absolute;
+    top: -20px;
+}
+
+.banner-txt {
+    opacity: 100%;
+    transform: translatey(0);
+    transition: all 0.5s;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 90px;
+    color: #222;
+}
+
+#white-banner .title01 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.map {
+    position: absolute;
+    top: 225px;
+    left: 830px;
+    animation: fadeIn 1s;
+}
+.map img {
+    width: 90%;
+}
+
+
+/*
+div {
+  width: 200px;
+  height: 300px;
+  background: red;
+  transition: width 1s;
+    margin: 0 auto;
+}
+
+#div1 {transition-timing-function: linear;}
+#div2 {transition-timing-function: ease;}
+#div3 {transition-timing-function: ease-in;}
+#div4 {transition-timing-function: ease-out;}
+#div5 {transition-timing-function: ease-in-out;}
+
+div:hover {
+  width: 300px;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+/*키프레임 시작*/
+
+/*메뉴창 사이드메뉴*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(80px);
+    }
+    to {
+        opacity: 3;
+        transform: none;
+    }
+}
+
+@keyframes fadeIn2 {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 3;
+        transform: none;
+    }
+}
+
+
+@-webkit-keyframes img_size {
+    0%{
+        width: 330px;
+        height: 440px;
+        
+    }
+    100% {
+         width: 100%;
+        height: 690px;
+    }
+}
+
+@keyframes fadeOut{
+    from {
+        opacity: 3;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+
